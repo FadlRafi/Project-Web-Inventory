@@ -3,18 +3,21 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+const path = require('path');
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../index.html')));
 
 const PORT = process.env.PORT || 5700;
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Fadlrafi_e17",
-  database: "inventory_app_bb",
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
 });
 
 db.connect((err) => {
