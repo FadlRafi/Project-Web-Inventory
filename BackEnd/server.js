@@ -4,20 +4,25 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const path = require('path');
+const { exec } = require("child_process");
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../index.html')));
+app.use(express.static(path.join(__dirname, '../')));
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname,'../','index.html'));
+});
 
 const PORT = process.env.PORT || 5700;
 
 const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
+  host: "localhost",
+  user: "root",
+  password: "Fadlrafi_e17",
+  database: "inventory_app_bb",
 });
 
 db.connect((err) => {
@@ -257,4 +262,7 @@ app.post("/api/register/register-employee", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on 127.0.0.1:${PORT}`);
+  const url =` http://localhost:${PORT}/dashboard`;
+  exec(`start ${url}`);
+
 });
