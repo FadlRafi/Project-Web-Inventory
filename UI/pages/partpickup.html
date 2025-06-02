@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/UI/styles/partpickup.css" />
+    <title id="title">Part Pickup</title>
+  </head>
+  <body>
+    <div class="topContent">
+      <h1>Part Pick Up</h1>
+    </div>
+
+    <div class="main_content">
+      <div class="mainTable">
+        <div class="col1">
+          <div class="containerInput">
+            <label for="IdKaryawan">ID Karyawan</label>
+            <div class="idKaryawan">
+              <input type="text" id="IdKaryawan" />
+              <button id="idKaryawanApply" class="idKaryawanApply">
+                <img src="/UI/icons/apply-white.svg" />
+              </button>
+            </div>
+          </div>
+
+          <div class="containerInput">
+            <label for="KodeBarang">Kode Barang</label>
+            <div class="idKaryawan">
+              <input type="text" id="KodeBarang" disabled/>
+              <button id="idBarangButton" class="idKaryawanApply">
+                <img src="/UI/icons/apply-white.svg" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col2">
+          <div class="containerKaryawan" id="containerKaryawan">
+          </div>
+        </div>
+      </div>
+
+      <div class="headTable">
+        <span class="idItem">ID</span>
+        <span class="nameItem">Name</span>
+        <span class="rangeItem">Range</span>
+        <span class="brandItem">Brand</span>
+        <span class="typeItem">Type</span>
+        <span class="qtyItem">Quantity</span>
+        <span class="outItem">Out</span>
+      </div>
+
+      <div class="dataBarang" id="dataBarang"></div>
+      <button class="ambilBarangButton" id="AmbilBarangButton">Ambil Barang</button>
+    </div>
+    <script src="/UI/control/partpickupScript.js" type="module"></script>
+  </body>
+</html>

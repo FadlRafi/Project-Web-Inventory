@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/UI/styles/partininventory.css" />
+    <title id="title">Part in</title>
+  </head>
+  <body>
+    <div class="topContent">
+      <h2>Part In Inventory</h2>
+    </div>
+
+    <div class="main_Content" id="main_Content">
+      <div class="inputMenu">
+        <div class="col1">
+          <div class="boxInventory">
+            <label class="inputLabel">Id*</label>
+            <input id="id" type="text" required />
+            <small id="idInvalid" class="error-message"></small>
+          </div>
+
+          <div class="boxInventory">
+            <label class="inputLabel">Name*</label>
+            <input id="name" type="text" required />
+            <small id="nameInvalid" class="error-message"></small>
+          </div>
+
+          <div class="boxInventory">
+            <label class="inputLabel">Range*</label>
+            <input id="range" type="text" required />
+            <small id="rangeInvalid" class="error-message"></small>
+          </div>
+
+          <div class="boxInventory">
+            <label class="inputLabel">Category*</label>
+            <div class="listCategory-wrapper">
+              <select class="listCategory" id="listCategory">
+                <option value="" disabled selected hidden></option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Tools">Tools</option>
+              </select>
+            </div>
+            <small id="catInvalid" class="error-message"></small>
+          </div>
+        </div>
+
+        <div class="col2">
+          <div class="boxInventory">
+            <label>Brand</label>
+            <input id="brand" type="text" />
+          </div>
+
+          <div class="boxInventory">
+            <label>Type</label>
+            <input id="type" type="text" />
+          </div>
+
+          <div class="boxInventory">
+            <label class="inputLabel">Quantity*</label>
+            <input id="qty" type="text" required />
+            <small id="qtyInvalid" class="error-message"></small>
+          </div>
+        </div>
+      </div>
+
+      <div class="btnGroup">
+        <button class="saveButton" id="saveButton">Save Inventory</button>
+        <button class="cancelButton" id="CancelButton">Cancel</button>
+      </div>
+    </div>
+
+    <script src="/UI/control/partinScript.js"></script>
+  </body>
+</html>

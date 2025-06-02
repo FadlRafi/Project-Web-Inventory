@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="UI/styles/dashboardStyle.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <h2>Menu</h2>
+      <ul class="navMenu">
+        <li>
+          <a href="#" class="navMenuContent active" data-page="dashboard.html"
+            >Dashboard</a
+          >
+        </li>
+        <li>
+          <a href="#" class="navMenuContent" data-page="register.html">Register</a>
+        </li>
+        <li>
+          <a href="#" class="navMenuContent" data-page="partpickup.html"
+            >Part Pickup</a
+          >
+        </li>
+        <li>
+          <a href="#" class="navMenuContent" id="Partin" data-page="partin.html">Part In</a>
+        </li>
+        <li class="hasSubmenu">
+          <a
+            href="#"
+            class="navMenuContent"
+            id="Inventory"
+            data-page="inventory.html"
+            onclick="toggleSubmenu()"
+            >Inventory</a
+          >
+          <ul class="submenu">
+            <li>
+              <a
+                href="#"
+                class="submenuItem"
+                id="Electrical"
+                data-page="inventoryElectrical.html"
+                >Electrical</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="submenuItem"
+                id="Mechanical"
+                data-page="inventoryMechanical.html"
+                >Mechanical</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main id="content" class="mainContent"></main>
+    <script src="/UI/control/controlPage.js" type="module"></script>
+  </body>
+</html>

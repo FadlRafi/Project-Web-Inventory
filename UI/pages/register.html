@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Register</title>
+    <link rel="stylesheet" href="/UI/styles/registerStyle.css">
+</head>
+<body>
+    <div class="topContent">
+        <h1>Register</h1> 
+    </div>
+    <div class="main_Content">
+        <div class="boxInput">
+            <label class="inputLabel" for="nik">NIK*</label>
+            <input id="nik" type="text" required maxlength="7"/>
+            <small id="nikInvalid" class="error-message"></small>
+        </div>
+
+        <div class="boxInput">
+            <label class="inputLabel" for="name">Name*</label>
+            <input id="name" type="text" required />
+            <small id="nameInvalid" class="error-message"></small>
+        </div> 
+
+        <div class="boxInput">
+            <label class="inputLabel" for="departement">Departement*</label>
+            <div class="listDepartement-wrapper">
+                <select class="listDepartement" id="listDepartement">
+                    <option value="" disabled selected hidden></option>
+                    <option value="Engineering BB">Engineering BB</option>
+                    <option value="Engineering Line A">Engineering Line A</option>
+                    <option value="Engineering Line B">Engineering Line B</option>
+                    <option value="Production BB">Production BB</option>
+                    <option value="Production EMD">Production EMD</option>
+                    <option value="E-Beam">E-Beam</option>
+                    <option value="General Affair (GA)">General Affair (GA)</option>
+                </select>
+            </div>
+            <small id="departementInvalid" class="error-message"></small>
+        </div>
+        <div class="btnGroup">
+            <button id="inputKaryawan" class="inputKaryawan">Register</button>
+        </div>
+    </div>
+    <script src="/UI/control/registerScript.js"></script>
+</body>
+</html>

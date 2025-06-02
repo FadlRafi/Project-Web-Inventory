@@ -1,0 +1,254 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+.topContent {
+  display: flex;
+  align-items: center;
+
+  padding-left: 25px;
+
+  width: 98%;
+  height: 90px;
+  background-color: #f4f5fc;
+  border-radius: 10px;
+  /* box-shadow: 5px 10px 8px #888888; */
+}
+
+.main_content {
+    width: 100%;
+    /* padding-left: 25px; */
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.idKaryawan {
+    display: flex;
+    align-items: center;
+
+}
+
+.idKaryawanApply {
+    display: flex;
+    height: 40px;
+    width: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10px;
+
+    padding: 0;
+
+    border-radius: 10px;
+
+    background-color: #03a1d6;
+
+    border: 0px solid;
+}
+
+.idKaryawanApply:hover {
+    cursor: pointer;
+    background-color: #00bfff;
+}
+
+.idKaryawanApply img {
+    height: 30px;
+    width: 30px;    
+}
+
+
+.mainTable {
+    width: 100%;
+    display: flex;
+}
+
+.col1 {
+    width: 50%;
+}
+
+.col2 {
+    width: 50%;
+}
+
+.containerKaryawan {
+    display: none;
+
+    width: 100%;
+    height: 175px;
+
+    border-radius: 10px;
+    flex-direction: column;
+
+    background-color: #F4F5FC;
+}
+
+.containerKaryawan.active {
+  display: flex;
+}
+
+
+.dataKaryawan {
+    margin-left: 10px;
+    font-size: 14pt;
+    font-family: Montserrat;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+
+    width: 95%;
+    margin-bottom: 20px;
+
+    margin-left: 25px ;
+}
+
+.containerInput input {
+    width: 80%;
+    height: 50px;
+    margin-top: 5px;
+    font-size: 14pt;
+    padding-left: 10px;
+    border-radius: 15px;
+    border: 0px solid;
+
+    background-color: #F4F5FC;
+}
+
+.headTable {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  background-color: #f4f5fc;
+  margin-bottom: 20px;
+}
+
+.dataBarang {
+  height: 230px;
+  width: 100%;
+
+  overflow: scroll;
+}
+
+.itemInventory {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+
+  background-color: #f4f5fc;
+}
+
+.itemInventory.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.idItem {
+  display: flex;
+  justify-content: center;
+
+  width: 18%;
+}
+
+.nameItem {
+  display: flex;
+  justify-content: center;
+
+  width: 18%;
+}
+
+.rangeItem {
+  display: flex;
+  justify-content: center;
+  width: 17%;
+}
+
+.brandItem {
+  display: flex;
+  justify-content: center;
+  width: 17%;
+}
+
+.typeItem {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.qtyItem {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+
+.outItem {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
+.minButton {
+  width: 18%;
+
+  background-color: red;
+  color: white;
+
+  border: 0 solid;
+  border-radius: 5px;
+}
+
+.inputQty {
+  width: 30%;
+
+  text-align: center;
+
+  border-radius: 10px;
+  border: 0 solid;
+}
+
+.plusButton {
+  width: 18%;
+
+  background-color: #00bfff;
+  color: white;
+  
+  border: 0 solid;
+  border-radius: 5px;
+}
+
+.ambilBarangButton {
+  width: 15%;
+  height: 40px;
+
+  border-radius: 15px;
+  border: 0 solid;
+
+  background-color: #03a1d6;
+  color: white;
+}
+
+.ambilBarangButton:hover {
+  cursor: pointer;
+
+  font-weight: 700;
+  background-color: #00bfff;
+}
