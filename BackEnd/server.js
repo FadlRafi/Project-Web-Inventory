@@ -1,10 +1,12 @@
-const mysql = require("mysql");
+const mysql = require("mysql2/promise");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config();
 
 const path = require('path');
 const { exec } = require("child_process");
+const { json } = require("stream/consumers");
 
 const app = express();
 
@@ -16,39 +18,61 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname,'../','index.html'));
 });
 
-const PORT = 18212;
+const PORT = process.env.MYSQLPORT;
 
-const db = mysql.createConnection({
-  host: "-",
-  user: "root",
-  password: "-",
-  database: "railway",
+const db = mysql.createPool({
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  port: PORT,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error("Database connection error: " + err);
-    return;
+// db.connect((err) => {
+//   if (err) {
+//     console.error("Database connection error: " + err);
+//     return;
+//   }
+//   console.log("Connected to MySQL database.");
+
+//   const sql = "SELECT * FROM tblm_electrical_inv";
+//   db.query(sql, (err, result) => {
+//     console.log("Hasil database -> ", result);
+//   });
+// });
+
+async function testConnection() {
+  try {
+    const [rows] = await db.query('SELECT NOW() as time');
+    console.log('Database connected! Server time:', rows[0].time);
+  } catch (err) {
+    console.error('Connection failed:', err);
   }
-  console.log("Connected to MySQL database.");
+}
 
-  const sql = "SELECT * FROM tblm_electrical_inv";
-  db.query(sql, (err, result) => {
-    console.log("Hasil database -> ", result);
-  });
-});
+testConnection();
 
 //Electrical
 
-app.get("/api/data", (req, res) => {
+app.get("/api/data", async (req, res) => {
   const sql = "SELECT * FROM tblm_electrical_inv";
 
-  db.query(sql, (err, result) => {
-    if (err) {
-      return res.status(500).send(err);
-    }
+  try {
+    const [result] = await db.query(sql);
     res.json(result);
-  });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+
+  // db.query(sql, (err, result) => {
+  //   if (err) {
+  //     return res.status(500).send(err);
+  //   }
+  //   res.json(result);
+  // });
 });
 
 app.get("/api/data/id", (req, res) => {

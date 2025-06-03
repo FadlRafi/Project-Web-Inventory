@@ -1,10 +1,11 @@
-const API_URL = 'http://127.0.0.1:5700/api/data';
+const API_URL = '/api/data';
 
 export async function getElectricalInventory() {
 
     try {
         const response = await fetch(API_URL);
         const result = await response.json();
+        console.log(result)
         return result;
         
     } catch (error){
