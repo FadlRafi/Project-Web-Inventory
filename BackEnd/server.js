@@ -16,13 +16,13 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname,'../','index.html'));
 });
 
-const PORT = process.env.PORT || 5700;
+const PORT = 18212;
 
 const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
+  host: "caboose.proxy.rlwy.net",
+  user: "root",
+  password: "WhXcHGCESQpOrMyzhRgRnRFVUkGeIdBT",
+  database: "railway",
 });
 
 db.connect((err) => {
