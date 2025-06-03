@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -19,9 +19,9 @@ app.get('/dashboard', (req, res) => {
 const PORT = 18212;
 
 const db = mysql.createConnection({
-  host: "caboose.proxy.rlwy.net",
+  host: "-",
   user: "root",
-  password: "WhXcHGCESQpOrMyzhRgRnRFVUkGeIdBT",
+  password: "-",
   database: "railway",
 });
 
