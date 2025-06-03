@@ -19,10 +19,10 @@ app.get('/dashboard', (req, res) => {
 const PORT = process.env.PORT || 5700;
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Fadlrafi_e17",
-  database: "inventory_app_bb",
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
 });
 
 db.connect((err) => {
