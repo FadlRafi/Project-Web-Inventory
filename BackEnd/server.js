@@ -284,7 +284,7 @@ app.post("/api/register/register-employee", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running ${PORT}`);
   // const url =` http://localhost:${PORT}/dashboard`;
   // exec(`start ${url}`);
