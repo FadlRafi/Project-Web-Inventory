@@ -25,6 +25,7 @@ export async function main() {
     const rangeInvalid = document.getElementById("rangeInvalid");
     const catInvalid = document.getElementById("catInvalid");
     const qtyInvalid = document.getElementById("qtyInvalid");
+    const firstCharId = idValue.value.charAt(0);
 
     if (
       !idValue.value ||
@@ -33,7 +34,6 @@ export async function main() {
       !catValue.value ||
       !qtyValue.value
     ) {
-      e.preventDefault();
       alert("Input tidak boleh ada yang kosong!!");
       if (!idValue.value) {
         idInvalid.textContent = "Harus di isi!!";
@@ -100,6 +100,10 @@ export async function main() {
           qtyValue.value = "";
           catValue.value = "";
         } else {
+          if (firstCharId !== "E" || firstCharId !== "M"){
+            alert("Untuk kode pertama Id harus menggunakan huruf E untuk categori Electrical atau menggunakan huruf M untuk categori Mechanical");
+            return;
+          }
           if (catValue.value === "Electrical") {
             findIdElectrical(idValue.value).then((available) => {
               if (!available) {

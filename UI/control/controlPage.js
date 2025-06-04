@@ -21,7 +21,7 @@ const submenuItems = document.querySelectorAll(".submenuItem");
 const content = document.getElementById("content");
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("UI/pages/" + "dashboard.html");
+  loadPage("UI/pages/" + "aboutMe.html");
 
   menuItems.forEach((item) => {
     item.addEventListener("click", (e) => {
