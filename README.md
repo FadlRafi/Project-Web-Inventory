@@ -5,8 +5,8 @@ Ini merupakan project web pertama saya. Project ini merupakan rancanga implement
 
 Project ini menggunakan html, css, javascript dan MySql. 
 html dan css digunakan sebagai pembuatan UI project
-javascript digunakan untuk mengelola menu-menu project. Untuk main app di project ini adalah server.js yang ada di file BackEnd
-MySql digunakan sebagai database dari project ini untuk menyimpan data-data seperti data karyawan, part electrical dan part mechanical.
+.Javascript digunakan untuk mengelola menu-menu project. Untuk main app di project ini adalah server.js yang ada di file BackEnd
+.MySql digunakan sebagai database dari project ini untuk menyimpan data-data seperti data karyawan, part electrical dan part mechanical.
 
 Untuk tahapan penggunan menu/item bisa ikuti langkah sebagai berikut:
 
