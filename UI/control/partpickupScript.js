@@ -7,7 +7,7 @@ export async function mainPartPickup() {
   const ambilBarangButton = document.getElementById("AmbilBarangButton");
   let registered = false;
 
-  const data = [];
+  let data = [];
 
   nikKaryawan.focus();
 
@@ -118,6 +118,7 @@ export async function mainPartPickup() {
       containerKaryawan.classList.remove("active");
       document.getElementById("dataBarang").innerHTML = "";
       console.log(data);
+      data = [];
     } else {
       alert("Harap masukan data barang yang mau diambil !!!");
       nikKaryawan.focus();
@@ -141,7 +142,7 @@ export async function mainPartPickup() {
   }
 
   async function getNIK(nik) {
-    const API_URL = "http://127.0.0.1:5700/api/datakaryawan";
+    const API_URL = "/api/datakaryawan";
 
     try {
       const responses = await fetch(`${API_URL}/${nik}`);
@@ -167,7 +168,7 @@ export async function mainPartPickup() {
 
   async function getStuffElectrical(barcode) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/data/barang";
+      const API_URL = "/api/data/barang";
       const id = barcode;
 
       const response = await fetch(`${API_URL}/${id}`);
@@ -181,7 +182,7 @@ export async function mainPartPickup() {
 
   async function getStuffMechanical(barcode) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/mechanical/inventory/data/by";
+      const API_URL = "/api/mechanical/inventory/data/by";
       const id = barcode;
 
       const response = await fetch(`${API_URL}/${id}`);
@@ -287,7 +288,7 @@ export async function mainPartPickup() {
   }
 
   async function updateOutItemElectrical(id, qtyItem) {
-    const API_URL = "http://127.0.0.1:5700/api/update/outitem";
+    const API_URL = "/api/update/outitem";
 
     try {
       const response = await fetch(`${API_URL}/${id}`, {
@@ -311,7 +312,7 @@ export async function mainPartPickup() {
 
   async function updateOutItemMechanical(id, qtyItem) {
     const API_URL =
-      "http://127.0.0.1:5700/api/mechanical/inventory/update/out-item";
+      "/api/mechanical/inventory/update/out-item";
 
     try {
       const response = await fetch(`${API_URL}/${id}`, {

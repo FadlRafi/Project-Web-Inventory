@@ -62,7 +62,7 @@ export async function mainRegister() {
 
   async function registerEmployee(nikEmployee, name, depart) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/register/register-employee";
+      const API_URL = "/api/register/register-employee";
       const nik = nikEmployee;
       const nameEmployee = name;
       const departement = depart;
@@ -85,7 +85,7 @@ export async function mainRegister() {
 
   async function getAllNik() {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/register/get/all-nik";
+      const API_URL = "/api/register/get/all-nik";
       const responses = await fetch(API_URL);
       const result = await responses.json();
 

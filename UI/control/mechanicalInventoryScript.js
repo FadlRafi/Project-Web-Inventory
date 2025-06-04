@@ -125,7 +125,7 @@ export async function mainMechanicalInventory() {
 
   async function deleteInventory(id) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/mechanical/inventory/delete";
+      const API_URL = "/api/mechanical/inventory/delete";
       const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
       });
@@ -144,7 +144,7 @@ export async function mainMechanicalInventory() {
   }
   async function getMechanicalInventory() {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/mechanical/inventory/alldata";
+      const API_URL = "/api/mechanical/inventory/alldata";
       const response = await fetch(API_URL);
       const result = await response.json();
 

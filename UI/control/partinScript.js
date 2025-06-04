@@ -173,7 +173,7 @@ export async function main() {
   });
 
   async function addElectricalInventory(idItem, name, range, brand, type, qty) {
-    const API_URL = "http://127.0.0.1:5700/tblm_electrical_inv";
+    const API_URL = "/tblm_electrical_inv";
     const item = {
       id: idItem,
       nameItem: name,
@@ -207,7 +207,7 @@ export async function main() {
   }
 
   async function findIdElectrical(id) {
-    const API_URL = "http://127.0.0.1:5700/api/data/id";
+    const API_URL = "/api/data/id";
 
     try {
       const response = await fetch(API_URL);
@@ -236,7 +236,7 @@ export async function main() {
 
   async function updateElectricalInventory(id, name, range, brand, type, qty) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/update";
+      const API_URL = "/api/update";
       const response = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -258,7 +258,7 @@ export async function main() {
   }
 
   async function addMechanicalInventory(idItem, name, range, brand, type, qty) {
-    const API_URL = "http://127.0.0.1:5700/api/mechanical/inventory/add-new";
+    const API_URL = "/api/mechanical/inventory/add-new";
     const item = {
       id: idItem,
       nameItem: name,
@@ -292,7 +292,7 @@ export async function main() {
   }
 
   async function findIdMechanical(id) {
-    const API_URL = "http://127.0.0.1:5700/api/mechanical/inventory/data/id";
+    const API_URL = "/api/mechanical/inventory/data/id";
 
     try {
       const response = await fetch(API_URL);
@@ -329,7 +329,7 @@ export async function main() {
   ) {
     try {
       const API_URL =
-        "http://127.0.0.1:5700/api/mechanical/inventory/update/all-data";
+        "/api/mechanical/inventory/update/all-data";
       const response = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

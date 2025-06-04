@@ -126,7 +126,7 @@ export async function mainElectricalInventory() {
 
   async function deleteInventory(id) {
     try {
-      const API_URL = "http://127.0.0.1:5700/api/delete";
+      const API_URL = "/api/delete";
       const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
       });
