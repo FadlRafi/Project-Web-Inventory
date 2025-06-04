@@ -4,9 +4,7 @@ https://project-web-inventory-production.up.railway.app/
 Ini merupakan project web pertama saya. Project ini merupakan rancanga implementasi untuk mendata spare part yang ada di tempat kerja saya saat ini.
 
 Project ini menggunakan html, css, javascript dan MySql. 
-html dan css digunakan sebagai pembuatan UI project
-.Javascript digunakan untuk mengelola menu-menu project. Untuk main app di project ini adalah server.js yang ada di file BackEnd
-.MySql digunakan sebagai database dari project ini untuk menyimpan data-data seperti data karyawan, part electrical dan part mechanical.
+html dan css digunakan sebagai pembuatan UI project. Javascript digunakan untuk mengelola menu-menu project. Untuk main app di project ini adalah server.js yang ada di file BackEnd. MySql digunakan sebagai database dari project ini untuk menyimpan data-data seperti data karyawan, part electrical dan part mechanical.
 
 Untuk tahapan penggunan menu/item bisa ikuti langkah sebagai berikut:
 
